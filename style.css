@@ -1,0 +1,590 @@
+/* Basic styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+}
+
+.left-button {
+    position: relative;
+}
+
+.menu-btn {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.menu-dropdown {
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    background-color: #444;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    min-width: 160px;
+    opacity: 0; /* Start with opacity 0 */
+    pointer-events: none; /* Prevent interaction when hidden */
+    transform: translateY(-10px); /* Start with dropdown slightly above */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+.menu-dropdown a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.menu-dropdown a:hover {
+    background-color: #555;
+}
+
+/* Show the dropdown with smooth transition */
+.left-button:hover .menu-dropdown {
+    display: block;
+    opacity: 1; /* Fade in */
+    pointer-events: auto; /* Enable interaction */
+    transform: translateY(0); /* Slide into place */
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-name {
+    margin-right: 15px;
+    text-align: right;
+}
+
+.role {
+    display: block;
+    font-size: 12px;
+    color: #aaa;
+}
+
+.name {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-btn {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    display: inline;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #444;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    min-width: 160px;
+    opacity: 0; /* Start with opacity 0 */
+    pointer-events: none; /* Prevent interaction when hidden */
+    transform: translateY(-10px); /* Start with dropdown slightly above */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #555;
+}
+
+/* Show the dropdown with smooth transition */
+.dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1; /* Fade in */
+    pointer-events: auto; /* Enable interaction */
+    transform: translateY(0); /* Slide into place */
+}
+
+/* Supply Request Form Styling */
+/* Ensure the parent container centers the form without causing scrolling */
+#main-contentrequest {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh; /* Full height of the viewport */
+    overflow: hidden; /* Prevent scrolling */
+}
+
+#main-contentrequest form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px; /* Form width limited to 600px */
+    margin: auto; /* Center the form */
+    box-sizing: border-box;
+    overflow: hidden; /* Prevent overflow */
+    max-height: 90vh; /* Max height to fit the screen */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+
+#main-contentrequest form label {
+    display: block;
+    margin-bottom: 4px; /* Reduced margin between label and input */
+    font-size: 12px; /* Reduced font size */
+    font-weight: bold;
+}
+
+#main-contentrequest form input,
+#main-contentrequest form select {
+    width: 100%;
+    padding: 8px; /* Reduced padding for inputs */
+    margin-bottom: 12px; /* Reduced margin between form elements */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px; /* Reduced font size for input text */
+}
+
+#main-contentrequest form button {
+    background-color: #800000; /* Dark red color */
+    color: white;
+    padding: 10px 20px;
+    font-size: 14px; /* Slightly smaller font size for the button */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px; /* Reduced top margin */
+}
+
+#main-contentrequest form button:hover {
+    background-color: #660000; /* Darker red when hovered */
+}
+
+#main-contentrequest form input:focus,
+#main-contentrequest form select:focus {
+    border-color: #800000; /* Change border color when focused */
+    outline: none; /* Remove outline */
+}
+
+#main-contentrequest h1 {
+    text-align: center;
+    color: #333;
+    font-size: 18px; /* Reduced font size for the heading */
+    margin-bottom: 20px;
+}
+
+/* Adjustments for mobile and smaller screens */
+@media (max-width: 768px) {
+    #main-contentrequest form {
+        padding: 15px;
+    }
+
+    #main-contentrequest form button {
+        padding: 10px 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    #main-contentrequest form {
+        max-width: 100%; /* Ensure the form takes up the full width of the screen on smaller devices */
+    }
+
+    #main-contentrequest form input,
+    #main-contentrequest form select {
+        padding: 10px; /* Slightly smaller padding for smaller screens */
+    }
+
+    #main-contentrequest form button {
+        padding: 10px 15px; /* Adjust button padding for small screens */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Flex container for left and right sections */
+#main-contentrequest {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+/* Style for the left form container */
+#left-form-container {
+    width: 30%;
+    padding: 20px;
+    background-color: #800000;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for the right form container */
+#right-form-container {
+    width: 65%;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for the right corner container displaying pencil brands */
+#right-corner-container {
+    position: absolute;
+    top: 20%;
+    right: 5%;
+    width: 20%;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: none; /* Hidden by default, shown when Writing Tools is selected */
+}
+
+#right-corner-container .brand {
+    margin-bottom: 10px;
+}
+
+#right-corner-container .brand img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+
+
+
+
+/* Basic styles for product cards */
+#product-cards-container {
+    margin-top: 20px;
+    display:flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    position: fixed; /* Fix the position to the bottom */
+    top: 298px; /* Position it 20px from the bottom of the viewport */
+    left: 66%; /* Center the container horizontally */
+    transform: translateX(-50%); /* Align it perfectly centered */
+    width: 960px; /* Adjust width to fit the cards */
+    height: 260px;
+    z-index: 10; /* Ensure it is above other content if necessary */
+    padding: 150px;
+    background: #F8F8F8;
+    border-radius: 8px;
+    color: #000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+     overflow: auto;
+}
+
+.product-card {
+    width: 150px;
+    height: 195px;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative; /* Use relative positioning */
+    bottom: 130px; /* Moves the card 200px down */
+}
+
+
+
+.product-card img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.product-card button {
+    background-color: #800000;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.product-card button:hover {
+    background-color: #660000;
+}
+
+
+
+
+
+
+
+/* Popup modal styling */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 2px solid #000;
+    z-index: 1000;
+    width: 800px; /* You can adjust the width to fit the new fields */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added subtle shadow for depth */
+}
+
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+/* Style for product image */
+.popup img {
+    width: 100%;               /* Make the image span the full width of its container */
+    max-width: 200px;          /* Ensure the image doesn't exceed 200px in width */
+    max-height: 200px;         /* Ensure the image doesn't exceed 200px in height */
+    height: auto;              /* Maintain the aspect ratio of the image */
+    display: block;            /* Makes sure the image is displayed as a block element */
+    margin-bottom: 15px;       /* Adds space below the image */
+    margin-left: auto;         /* Center the image horizontally */
+    margin-right: auto;        /* Center the image horizontally */
+    border: 2px solid #ddd;    /* Adds a light border around the image */
+    border-radius: 8px;        /* Rounded corners for the image */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+}
+
+
+.popup img:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add subtle shadow on hover */
+}
+
+/* Labels and form fields styling */
+label {
+    font-size: 14px;
+    color: #000000;
+    margin-bottom: 8px;
+    display: block;
+}
+
+select, input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+select:focus, input[type="number"]:focus {
+    outline-color: #3498db;
+    border-color: #3498db;
+}
+
+/* Button styling */
+.close-btn, .add-to-cart-btn {
+    padding: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #0085b9;
+    color: white;
+}
+
+.add-to-cart-btn:hover, .close-btn:hover {
+    background-color: #680000;
+}
+
+.close-btn {
+    background-color: #800000;
+}
+
+.close-btn:hover {
+    background-color: 800000;
+}
+
+/* Additional styling for spacing */
+.popup p {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#popup select, #popup input[type="number"] {
+    margin-bottom: 12px;
+}
+
+
+
+
+
+
+.table-container {
+    max-width: 1200px;
+    min-height: 850px;
+    margin: auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.search-container {
+    margin-bottom: 10px;
+    text-align: right;
+}
+
+#searchInput {
+    padding: 8px;
+    width: 250px;
+    border: 1px solid #ddd;
+    border-radius: 18px;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+}
+
+tr:hover {
+    background-color: #f9f9f9;
+}
+
+/* Action Icons Styling */
+.actions i {
+    margin: 0 4px;
+    cursor: pointer;
+}
+
+.actions i:hover {
+    color: #007bff;
+}
+
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+
+.entries-info {
+    font-size: 14px;
+    color: #555;
+}
+
+.pagination {
+    display: flex;
+    gap: 5px;
+}
+
+.pagination-button {
+    padding: 8px 16px;
+    margin: 0 4px;
+    background-color: #800000;
+    color: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.pagination-button:hover {
+    background-color: #660000;
+}
+
+.pagination-button.active {
+    background-color: #4d0000;
+    color: white;
+    border-color: #4d0000;
+}
+
+.pagination-button:disabled {
+    background-color: #ddd;
+    color: #777;
+    cursor: not-allowed;
+}
+
+.pagination-button:first-child,
+.pagination-button:last-child {
+    padding: 8px 12px;
+}
+
+.pagination-button:first-child:hover,
+.pagination-button:last-child:hover {
+    background-color: #660000;
+}
+
+.pagination-button.active:hover {
+    background-color: #330000;
+}
